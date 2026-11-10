@@ -1,0 +1,428 @@
+html {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Instrument-Sans;
+    src: url("../fonts/InstrumentSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Alt;
+    src: url("../fonts/MontserratAlternates-Medium.ttf");
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background-color: #1E1E1E;
+}
+
+.logo {
+    font-family: Instrument-Sans;
+    font-size: 45px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    font-family: Montserrat-Alt;
+    font-size: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #CB0000;
+}
+
+.profile img {
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.main {
+    padding: 65px 50px 70px;
+    flex: 1;
+}
+
+.search {
+    width: 577px;
+    height: 40px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 100px;
+}
+
+.search input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+}
+
+.search input::placeholder {
+    color: #1E1E1E;
+}
+
+.search img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.movie-section {
+    margin: 60px 0 35px;
+}
+
+.movie-section h2 {
+    margin: 0 0 25px;
+    font-family: Montserrat-Alt;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 15px;
+    border-radius: 15px;
+    background: #F5F5F5;
+}
+
+.card img {
+    display: block;
+    width: 160px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.card-title {
+    margin: 0;
+    font-family: Montserrat-Alt;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1E1E1E;
+}
+
+.card-rating {
+    margin: 0;
+    font-family: Montserrat-Alt;
+    font-size: 18px;
+    color: #CB0000;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-watch,
+.btn-later {
+    border: none;
+    border-radius: 100px;
+    font-family: Montserrat-Alt;
+    font-size: 16px;
+    padding: 10px 22px;
+    cursor: pointer;
+}
+
+.btn-watch {
+    background: #AD191F;
+    color: #fff;
+}
+
+.btn-later {
+    background: transparent;
+    color: #1E1E1E;
+    border: 1px solid #1E1E1E;
+}
+
+footer {
+    background-color: #1E1E1E;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+}
+
+.p-footer {
+    margin: 15px 0;
+    font-family: Montserrat-Alt;
+    font-size: 18px;
+    color: #7C7C7C;
+}
+
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        padding: 22px 35px;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+
+    .nav-links {
+        gap: 40px;
+        font-size: 18px;
+    }
+
+    .profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .main {
+        padding: 55px 25px 60px;
+    }
+
+    .search {
+        width: 500px;
+        max-width: 80%;
+    }
+
+    .movie-section {
+        margin-top: 45px;
+    }
+
+    .movie-section h2 {
+        font-size: 24px;
+    }
+
+    .cards {
+        gap: 20px;
+    }
+
+    .card img {
+        width: 140px;
+        height: 210px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-rating {
+        font-size: 16px;
+    }
+
+    .btn-watch,
+    .btn-later {
+        font-size: 15px;
+        padding: 9px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .profile img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .main {
+        padding: 40px 15px 45px;
+    }
+
+    .search {
+        width: 100%;
+        max-width: 320px;
+        height: 34px;
+    }
+
+    .search input {
+        font-size: 12px;
+    }
+
+    .search img {
+        width: 19px;
+        height: 19px;
+        margin-right: 8px;
+    }
+
+    .movie-section {
+        margin: 40px 0 30px;
+    }
+
+    .movie-section h2 {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .cards {
+        gap: 15px;
+    }
+
+    .card {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card img {
+        width: 110px;
+        height: 165px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-rating {
+        font-size: 14px;
+    }
+
+    .card-buttons {
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .btn-watch,
+    .btn-later {
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+
+    .p-footer {
+        margin: 10px 0;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .profile img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .main {
+        padding: 30px 10px 40px;
+    }
+
+    .movie-section h2 {
+        font-size: 16px;
+    }
+
+    .cards {
+        gap: 12px;
+    }
+
+    .card {
+        gap: 10px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .card img {
+        width: 90px;
+        height: 135px;
+        border-radius: 8px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .card-rating {
+        font-size: 12px;
+    }
+
+    .card-buttons {
+        gap: 6px;
+    }
+
+    .btn-watch,
+    .btn-later {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .p-footer {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,398 @@
+html {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Instrument-Sans;
+    src: url("../fonts/InstrumentSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Alt;
+    src: url("../fonts/MontserratAlternates-Medium.ttf");
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 38px 58px 0;
+}
+
+.close {
+    display: block;
+    width: 30px;
+}
+
+.main {
+    padding: 65px 50px 70px;
+    flex: 1;
+}
+
+.div-reg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 93px;
+}
+
+.banner {
+    display: block;
+    width: 500px;
+    height: 665px;
+    object-fit: cover;
+}
+
+.logo {
+    font-family: Instrument-Sans;
+    font-size: 40px;
+    color: black;
+}
+
+.regis {
+    width: 450px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.regis input {
+    width: 100%;
+    height: 48px;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 100px;
+    outline: none;
+
+    background: #969696;
+
+    font-family: Montserrat-Alt;
+    font-size: 20px;
+    color: white;
+}
+
+.regis input::placeholder {
+    color: white;
+}
+
+p {
+    font-family: Montserrat-Alt;
+    font-size: 25px;
+}
+
+.btn-confirm {
+    width: 100%;
+
+    border: none;
+    border-radius: 100px;
+
+    background-color: #EDBF69;
+    color: white;
+
+    font-family: Montserrat-Alt;
+    font-size: 20px;
+
+    padding: 10px;
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+.div-sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-sign p {
+    margin: 15px 0 0;
+    text-align: center;
+}
+
+.btn-sign {
+    border: none;
+    border-radius: 100px;
+
+    background-color: #AD191F;
+    color: white;
+
+    font-family: Montserrat-Alt;
+    font-size: 20px;
+
+    padding: 10px 30px;
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+footer {
+    background-color: #1E1E1E;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    margin-top: auto;
+}
+
+.p-footer {
+    margin: 15px 0;
+
+    font-family: Montserrat-Alt;
+    font-size: 18px;
+    color: #7C7C7C;
+}
+
+@media (max-width: 1100px) {
+
+    header {
+        padding: 30px 35px 0;
+    }
+
+    .close {
+        width: 27px;
+    }
+
+    .main {
+        padding: 45px 30px 60px;
+    }
+
+    .div-reg {
+        gap: 50px;
+    }
+
+    .banner {
+        width: 42vw;
+        height: auto;
+        max-width: 450px;
+    }
+
+    .regis {
+        width: 40vw;
+        max-width: 450px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    .regis input {
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .btn-confirm,
+    .btn-sign {
+        font-size: 18px;
+    }
+
+    .p-footer {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 25px 25px 0;
+    }
+
+    .main {
+        padding: 35px 20px 50px;
+    }
+
+    .div-reg {
+        gap: 30px;
+    }
+
+    .banner {
+        width: 45vw;
+        max-width: 350px;
+    }
+
+    .regis {
+        width: 45vw;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .regis {
+        gap: 15px;
+    }
+
+    .regis input {
+        height: 42px;
+        padding: 9px 14px;
+        font-size: 16px;
+    }
+
+    .btn-confirm,
+    .btn-sign {
+        font-size: 16px;
+        padding: 9px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 18px 20px 0;
+    }
+
+    .close {
+        width: 24px;
+    }
+
+    .main {
+        padding: 25px 20px 40px;
+    }
+
+    .div-reg {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .banner {
+        display: none;
+    }
+
+    .div-reg > div:last-child {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .logo {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .div-reg > div:last-child > div:first-child p {
+        margin: 10px 0 20px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .regis {
+        width: 100%;
+        gap: 14px;
+    }
+
+    .regis input {
+        height: 42px;
+        padding: 9px 14px;
+        font-size: 15px;
+    }
+
+    .btn-confirm {
+        height: 44px;
+        margin-top: 5px;
+        font-size: 15px;
+    }
+
+    .div-sign p {
+        font-size: 16px;
+    }
+
+    .btn-sign {
+        font-size: 15px;
+        padding: 9px 25px;
+    }
+
+    .p-footer {
+        margin: 10px 0;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================
+   МАЛЕНЬКИЙ ТЕЛЕФОН
+   ========================= */
+
+@media (max-width: 380px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .close {
+        width: 21px;
+    }
+
+    .main {
+        padding: 20px 15px 35px;
+    }
+
+    .div-reg {
+        gap: 25px;
+    }
+
+    .banner {
+        display: none;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .div-reg > div:last-child > div:first-child p {
+        font-size: 18px;
+    }
+
+    .regis {
+        gap: 12px;
+    }
+
+    .regis input {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .btn-confirm {
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .div-sign p {
+        font-size: 14px;
+    }
+
+    .btn-sign {
+        font-size: 14px;
+    }
+
+    .p-footer {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,445 @@
+@font-face {
+    font-family: Instrument-Sans;
+    src: url("../fonts/InstrumentSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Alt;
+    src: url("../fonts/MontserratAlternates-Medium.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+.hero-header {
+    width: 100%;
+    height: 770px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-image: url("../assets/img-main.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 30px 0 0 #7C7C7C;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px 0;
+}
+
+.logo {
+    font-family: Instrument-Sans;
+    font-size: 45px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    font-family: Montserrat-Alt;
+    font-size: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #CB0000;
+}
+
+.profile img {
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+h1 {
+    margin: 0;
+    font-family: Montserrat-Alt;
+    font-size: 45px;
+}
+
+.hero-content p {
+    width: 649px;
+    margin: 20px 0;
+    font-family: Montserrat-Alt;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+
+.btn-place {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-watch,
+.btn-about {
+    height: 55px;
+
+    border: none;
+    border-radius: 100px;
+
+    color: white;
+    font-family: Montserrat-Alt;
+    font-size: 20px;
+}
+
+.btn-watch {
+    width: 250px;
+    background-color: #CB0000;
+}
+
+.btn-about {
+    width: 170px;
+    background-color: #1E1E1E;
+}
+
+.btn-watch:hover,
+.btn-about:hover {
+    cursor: pointer;
+}
+
+.main {
+    padding: 65px 50px 70px;
+}
+
+.movie-section {
+    margin: 60px 0 35px;
+}
+
+.movie-section h2 {
+    margin: 0 0 15px;
+    font-family: Montserrat-Alt;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.card {
+    width: 252px;
+    height: 379px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #1E1E1E;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+}
+
+.p-footer {
+    margin: 15px 0;
+    font-family: Montserrat-Alt;
+    font-size: 18px;
+    color: #7C7C7C;
+}
+
+@media (max-width: 1200px) {
+
+    .hero-header {
+        height: 700px;
+        border-radius: 0 0 40px 40px;
+    }
+
+    .navbar {
+        padding: 22px 35px 0;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+
+    .nav-links {
+        gap: 40px;
+        font-size: 18px;
+    }
+
+    .profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-content {
+        padding: 0 30px 50px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        width: 80%;
+        max-width: 649px;
+        font-size: 22px;
+    }
+
+    .btn-watch,
+    .btn-about {
+        height: 52px;
+        font-size: 18px;
+    }
+
+    .btn-watch {
+        width: 230px;
+    }
+
+    .btn-about {
+        width: 160px;
+    }
+    .main {
+        padding: 55px 25px 60px;
+    }
+
+    .search {
+        width: 500px;
+        max-width: 80%;
+    }
+
+    .movie-section {
+        margin: 45px 0 35px;
+    }
+
+    .movie-section h2 {
+        font-size: 24px;
+    }
+
+    .cards {
+        gap: 18px;
+    }
+
+    .card {
+        width: calc((100% - 54px) / 4);
+        height: auto;
+        aspect-ratio: 252 / 379;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero-header {
+        height: 600px;
+        border-radius: 0 0 30px 30px;
+        box-shadow: 0 20px 0 0 #7C7C7C;
+    }
+
+    .navbar {
+        padding: 18px 20px 0;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .profile img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero-content {
+        padding: 0 20px 35px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 380px;
+        margin: 15px 0 25px;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .btn-place {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-watch,
+    .btn-about {
+        width: 100%;
+        max-width: 280px;
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .main {
+        padding: 40px 10px 45px;
+    }
+
+    .search {
+        width: 100%;
+        max-width: 320px;
+        height: 34px;
+        margin-bottom: 25px;
+    }
+
+    .search input {
+        font-size: 12px;
+    }
+
+    .search img {
+        width: 19px;
+        height: 19px;
+        margin-right: 8px;
+    }
+
+    .movie-section {
+        margin: 35px 0 30px;
+    }
+
+    .movie-section h2 {
+        margin-bottom: 12px;
+        font-size: 17px;
+    }
+
+    .cards {
+        gap: 7px;
+    }
+
+    .card {
+        width: calc((100vw - 41px) / 4);
+        height: auto;
+        aspect-ratio: 252 / 379;
+        border-radius: 10px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .p-footer {
+        margin: 10px 0;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .hero-header {
+        height: 570px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .profile img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .hero-content {
+        padding: 0 15px 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .btn-watch,
+    .btn-about {
+        max-width: 250px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .main {
+        padding: 30px 8px 40px;
+    }
+
+    .movie-section h2 {
+        font-size: 15px;
+    }
+
+    .cards {
+        gap: 5px;
+    }
+
+    .card {
+        width: calc((100vw - 29px) / 4);
+        border-radius: 8px;
+    }
+
+    .p-footer {
+        font-size: 11px;
+    }
+}
