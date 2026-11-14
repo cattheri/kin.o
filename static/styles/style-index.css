@@ -1,0 +1,482 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: Instrument-Sans;
+    src: url("../fonts/InstrumentSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Alt;
+    src: url("../fonts/MontserratAlternates-Medium.ttf");
+}
+
+/* Главный экран */
+
+.hero-header {
+    width: 100%;
+    min-height: 680px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-image: url("../assets/img-main.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 25px 0 #7C7C7C;
+}
+
+/* Навигация */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 45px 0;
+}
+
+.logo {
+    font-family: Instrument-Sans;
+    font-size: 36px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    font-family: Montserrat-Alt;
+    font-size: 16px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #CB0000;
+}
+
+.profile img {
+    display: block;
+    width: 36px;
+    height: 36px;
+}
+
+/* Текст главного экрана */
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px 50px;
+}
+
+h1 {
+    margin: 0;
+    font-family: Montserrat-Alt;
+    font-size: 40px;
+}
+
+.hero-content p {
+    width: 600px;
+    max-width: 100%;
+    margin: 18px 0 25px;
+    font-family: Montserrat-Alt;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    color: white;
+}
+
+/* Кнопки */
+
+.btn-place {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-watch,
+.btn-about {
+    height: 46px;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-watch {
+    width: 205px;
+    background: #CB0000;
+}
+
+.btn-about {
+    width: 145px;
+    background: #1E1E1E;
+}
+
+/* Каталог */
+
+.main {
+    padding: 55px 45px 65px;
+}
+
+.movie-section {
+    margin: 50px 0 35px;
+}
+
+.movie-section h2 {
+    margin: 0 0 20px;
+    font-family: Montserrat-Alt;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+.card {
+    width: 235px;
+    aspect-ratio: 252 / 379;
+    overflow: hidden;
+    flex-shrink: 1;
+    border-radius: 12px;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Подвал */
+
+footer {
+    background: #1E1E1E;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.p-footer {
+    margin: 12px 0;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+    color: #7C7C7C;
+}
+
+/* Большие экраны */
+
+@media (min-width: 1600px) {
+    .hero-header {
+        min-height: 760px;
+    }
+
+    .navbar {
+        padding: 28px 65px 0;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+
+    .nav-links {
+        font-size: 17px;
+    }
+
+    .profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 44px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 250px;
+    }
+}
+
+/* Ноутбуки */
+
+@media (max-width: 1439px) {
+    .hero-header {
+        min-height: 610px;
+    }
+
+    .navbar {
+        padding: 20px 35px 0;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .nav-links {
+        gap: 35px;
+        font-size: 14px;
+    }
+
+    .profile img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .main {
+        padding: 45px 30px 55px;
+    }
+
+    .movie-section h2 {
+        font-size: 23px;
+    }
+
+    .cards {
+        gap: 18px;
+    }
+
+    .card {
+        width: 215px;
+    }
+}
+
+/* Планшеты */
+
+@media (max-width: 1023px) {
+    .hero-header {
+        min-height: 560px;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .navbar {
+        padding: 20px 25px 0;
+    }
+
+    .logo {
+        font-size: 29px;
+    }
+
+    .nav-links {
+        gap: 22px;
+        font-size: 13px;
+    }
+
+    .profile img {
+        width: 29px;
+        height: 29px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        max-width: 520px;
+        font-size: 15px;
+    }
+
+    .btn-watch,
+    .btn-about {
+        height: 43px;
+        font-size: 13px;
+    }
+
+    .btn-watch {
+        width: 185px;
+    }
+
+    .btn-about {
+        width: 130px;
+    }
+
+    .main {
+        padding: 40px 22px 50px;
+    }
+
+    .cards {
+        gap: 12px;
+    }
+
+    .card {
+        width: calc((100% - 36px) / 4);
+        flex-shrink: 1;
+    }
+
+    .movie-section h2 {
+        font-size: 21px;
+    }
+}
+
+/* Телефоны */
+
+@media (max-width: 767px) {
+    .hero-header {
+        min-height: 520px;
+        border-radius: 0 0 25px 25px;
+        box-shadow: 0 18px 0 #7C7C7C;
+    }
+
+    .navbar {
+        padding: 17px 18px 0;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .nav-links {
+        gap: 13px;
+        font-size: 12px;
+    }
+
+    .profile img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .hero-content {
+        padding: 0 20px 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .hero-content p {
+        margin: 13px 0 20px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .btn-place {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .btn-watch,
+    .btn-about {
+        width: 100%;
+        max-width: 260px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .main {
+        padding: 35px 12px 40px;
+    }
+
+    .movie-section {
+        margin: 30px 0 25px;
+    }
+
+    .movie-section h2 {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .cards {
+        gap: 7px;
+    }
+
+    .card {
+        width: calc((100% - 21px) / 4);
+        border-radius: 8px;
+    }
+
+    .p-footer {
+        margin: 9px 0;
+        font-size: 11px;
+    }
+}
+
+/* Маленькие телефоны */
+
+@media (max-width: 380px) {
+    .hero-header {
+        min-height: 490px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        gap: 9px;
+        font-size: 11px;
+    }
+
+    .profile img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .main {
+        padding: 28px 8px 35px;
+    }
+
+    .movie-section h2 {
+        font-size: 16px;
+    }
+
+    .cards {
+        gap: 5px;
+    }
+
+    .card {
+        width: calc((100% - 15px) / 4);
+        border-radius: 6px;
+    }
+}

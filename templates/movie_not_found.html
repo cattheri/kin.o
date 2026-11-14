@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильм не найден | kin.o</title>
+    <link rel="stylesheet" href="{% static 'styles/style-manage.css' %}">
+</head>
+<body>
+    <main class="manage-container">
+        <a href="{% url 'home' %}" class="logo">kin<span>.</span>o</a>
+
+        <div class="manage-header">
+            <h1>Фильм не найден</h1>
+            <p>Не удалось найти фильм по указанному ID.</p>
+        </div>
+
+        <a href="{% url 'showcase' %}" class="btn-back">
+            Вернуться в каталог
+        </a>
+    </main>
+</body>
+</html>

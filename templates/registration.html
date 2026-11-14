@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'styles/style-registration.css' %}?v=3">
+</head>
+
+<body>
+
+    <header>
+        <a href="{% url 'home' %}">
+            <img class="close" src="{% static 'assets/close.svg' %}" alt="Закрыть">
+        </a>
+    </header>
+
+    <main class="main">
+
+        <div class="div-reg">
+
+            <div>
+                <img class="banner" src="{% static 'assets/banner.png' %}" alt="Баннер">
+            </div>
+
+            <div>
+
+                <div>
+                    <div class="logo">kin.o</div>
+                    <p>Создать аккаунт</p>
+                </div>
+
+                <form class="regis" action="{% url 'registration' %}" method="POST">
+
+                    {% csrf_token %}
+
+                    {% for field in form %}
+
+                        {{ field }}
+
+                        {% if field.errors %}
+                            <div class="field-errors">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+
+                    {% endfor %}
+
+                    {% if form.non_field_errors %}
+                        <div class="form-errors">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <button class="btn-confirm" type="submit">
+                        Подтвердить
+                    </button>
+
+                    <div class="div-sign">
+                        <p>Уже есть аккаунт?</p>
+
+                        <a href="{% url 'auth' %}">
+                            <button class="btn-sign" type="button">
+                                Войти
+                            </button>
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="text-footer">
+            <div>
+                <p class="p-footer">Соглашение</p>
+                <p class="p-footer">Правила рекомендаций</p>
+                <p class="p-footer">Справка</p>
+                <p class="p-footer">© 2026, kin.o</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

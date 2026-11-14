@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Редактирование списка | kin.o</title>
+
+    <link rel="stylesheet" href="{% static 'styles/style-manage.css' %}">
+</head>
+
+<body>
+
+    <main class="manage-container">
+
+        <a href="{% url 'home' %}" class="logo">
+            kin<span>.</span>o
+        </a>
+
+        <div class="manage-header">
+
+            <h1>Редактирование фильма</h1>
+
+            <p>
+                {{ item.movie.title }}
+            </p>
+
+        </div>
+
+        <form method="POST" class="movie-form">
+
+            {% csrf_token %}
+
+            {{ form.non_field_errors }}
+
+            <p>
+                {{ form.status.label_tag }}
+                {{ form.status }}
+                {{ form.status.errors }}
+            </p>
+
+            <p>
+                {{ form.rating.label_tag }}
+                {{ form.rating }}
+
+                <span class="rating-help">
+                    Поставьте оценку от 1 до 10.
+                </span>
+
+                {{ form.rating.errors }}
+            </p>
+
+            <div class="form-buttons">
+
+                <button type="submit" class="btn-submit">
+                    Сохранить изменения
+                </button>
+
+                <a href="{% url 'profile' %}" class="btn-back">
+                    Отмена
+                </a>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</body>
+</html>

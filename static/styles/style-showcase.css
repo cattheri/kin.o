@@ -1,0 +1,521 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family: Instrument-Sans;
+    src: url("../fonts/InstrumentSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Alt;
+    src: url("../fonts/MontserratAlternates-Medium.ttf");
+}
+
+/* Ссылки */
+
+a {
+    text-decoration: none !important;
+}
+
+/* Навигация */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 45px;
+    background: #1E1E1E;
+}
+
+.logo {
+    font-family: Instrument-Sans;
+    font-size: 36px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    font-family: Montserrat-Alt;
+    font-size: 16px;
+}
+
+.nav-links a {
+    color: white;
+}
+
+.nav-links a:hover {
+    color: #CB0000;
+}
+
+.profile img {
+    display: block;
+    width: 36px;
+    height: 36px;
+}
+
+/* Основная область */
+
+.main {
+    flex: 1;
+    padding: 50px 35px 60px;
+}
+
+/* Поиск */
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 480px;
+    max-width: 100%;
+    height: 38px;
+    margin: 0 auto 25px;
+    border: 1px solid black;
+    border-radius: 100px;
+}
+
+.search input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: Montserrat-Alt;
+    font-size: 13px;
+}
+
+.search input::placeholder {
+    color: #1E1E1E;
+}
+
+.search img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Каталог */
+
+.movie-section {
+    margin: 45px 0 30px;
+}
+
+.movie-section h2 {
+    margin: 0 0 22px;
+    font-family: Montserrat-Alt;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+}
+
+/* Карточки */
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 14px;
+    border-radius: 13px;
+    background: #F5F5F5;
+}
+
+.card > img {
+    display: block;
+    width: 135px;
+    height: 202px;
+    object-fit: cover;
+    border-radius: 9px;
+    flex-shrink: 0;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+    min-width: 0;
+}
+
+.card-title {
+    margin: 0;
+    font-family: Montserrat-Alt;
+    font-size: 19px;
+    font-weight: 600;
+    color: #1E1E1E;
+    text-decoration: none !important;
+}
+
+.card-rating {
+    margin: 0;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+    color: #CB0000;
+}
+
+.movie-rating {
+    color: #EDBF69;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.p-about {
+    margin: 0;
+    font-family: Montserrat-Alt;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Кнопки */
+
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 7px;
+}
+
+.card-buttons form {
+    margin: 0;
+}
+
+.btn-watch,
+.btn-later {
+    display: inline-block;
+    padding: 9px 17px;
+    border: none;
+    border-radius: 100px;
+    font-family: Montserrat-Alt;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.btn-watch {
+    background: #AD191F;
+    color: white;
+}
+
+.btn-later {
+    background: transparent;
+    color: #1E1E1E;
+    border: 1px solid #1E1E1E;
+}
+
+/* Подвал */
+
+footer {
+    background: #1E1E1E;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.p-footer {
+    margin: 12px 0;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+    color: #7C7C7C;
+}
+
+/* Большие экраны */
+
+@media (min-width: 1600px) {
+    .navbar {
+        padding: 25px 65px;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+
+    .nav-links {
+        font-size: 17px;
+    }
+
+    .profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cards {
+        max-width: 950px;
+    }
+
+    .card > img {
+        width: 150px;
+        height: 225px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+}
+
+/* Ноутбуки */
+
+@media (max-width: 1439px) {
+    .navbar {
+        padding: 19px 35px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .nav-links {
+        gap: 35px;
+        font-size: 14px;
+    }
+
+    .profile img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .main {
+        padding: 40px 25px 50px;
+    }
+
+    .cards {
+        max-width: 780px;
+    }
+
+    .card > img {
+        width: 120px;
+        height: 180px;
+    }
+
+    .card-title {
+        font-size: 17px;
+    }
+
+    .p-about {
+        font-size: 12px;
+    }
+
+    .btn-watch,
+    .btn-later {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+}
+
+/* Планшеты */
+
+@media (max-width: 1023px) {
+    .navbar {
+        padding: 18px 25px;
+    }
+
+    .logo {
+        font-size: 29px;
+    }
+
+    .nav-links {
+        gap: 22px;
+        font-size: 13px;
+    }
+
+    .profile img {
+        width: 29px;
+        height: 29px;
+    }
+
+    .main {
+        padding: 35px 20px 45px;
+    }
+
+    .movie-section h2 {
+        font-size: 22px;
+    }
+
+    .card {
+        gap: 17px;
+        padding: 12px;
+    }
+
+    .card > img {
+        width: 110px;
+        height: 165px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-rating {
+        font-size: 13px;
+    }
+}
+
+/* Телефоны */
+
+@media (max-width: 767px) {
+    .navbar {
+        padding: 16px 18px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .nav-links {
+        gap: 13px;
+        font-size: 12px;
+    }
+
+    .profile img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .main {
+        padding: 30px 12px 40px;
+    }
+
+    .search {
+        height: 35px;
+        max-width: 320px;
+    }
+
+    .search input {
+        font-size: 12px;
+    }
+
+    .movie-section {
+        margin: 30px 0 25px;
+    }
+
+    .movie-section h2 {
+        margin-bottom: 16px;
+        font-size: 19px;
+    }
+
+    .cards {
+        gap: 14px;
+    }
+
+    .card {
+        gap: 12px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .card > img {
+        width: 95px;
+        height: 143px;
+    }
+
+    .card-info {
+        gap: 7px;
+    }
+
+    .card-title {
+        font-size: 15px;
+    }
+
+    .card-rating {
+        font-size: 11px;
+    }
+
+    .p-about {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .card-buttons {
+        gap: 7px;
+        margin-top: 5px;
+    }
+
+    .btn-watch,
+    .btn-later {
+        padding: 7px 11px;
+        font-size: 11px;
+    }
+
+    .p-footer {
+        margin: 9px 0;
+        font-size: 11px;
+    }
+}
+
+/* Маленькие телефоны */
+
+@media (max-width: 380px) {
+    .navbar {
+        padding: 14px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        gap: 9px;
+        font-size: 11px;
+    }
+
+    .profile img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .main {
+        padding: 25px 9px 35px;
+    }
+
+    .card {
+        gap: 9px;
+        padding: 8px;
+    }
+
+    .card > img {
+        width: 82px;
+        height: 123px;
+    }
+
+    .card-title {
+        font-size: 13px;
+    }
+
+    .p-about {
+        font-size: 10px;
+    }
+
+    .btn-watch,
+    .btn-later {
+        padding: 6px 9px;
+        font-size: 10px;
+    }
+}

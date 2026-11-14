@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family: Instrument-Sans;
+    src: url("../fonts/InstrumentSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Alt;
+    src: url("../fonts/MontserratAlternates-Medium.ttf");
+}
+
+/* Верхняя часть */
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px 40px 0;
+}
+
+.close {
+    display: block;
+    width: 25px;
+}
+
+/* Основное содержимое */
+
+.main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 30px 45px;
+}
+
+.div-reg {
+    width: 100%;
+    max-width: 1050px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+}
+
+.banner {
+    display: block;
+    width: 420px;
+    height: 560px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Логотип и заголовок */
+
+.logo {
+    font-family: Instrument-Sans;
+    font-size: 36px;
+    color: black;
+}
+
+.div-reg > div:last-child {
+    width: 390px;
+    flex-shrink: 0;
+}
+
+.div-reg > div:last-child > div:first-child p {
+    margin: 10px 0 25px;
+    font-family: Montserrat-Alt;
+    font-size: 21px;
+}
+
+/* Форма */
+
+.regis {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.regis input {
+    width: 100%;
+    height: 44px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+    background: #969696;
+    font-family: Montserrat-Alt;
+    font-size: 15px;
+    color: white;
+}
+
+.regis input::placeholder {
+    color: white;
+}
+
+.regis input:focus {
+    outline: 2px solid #EDBF69;
+}
+
+/* Кнопки */
+
+.btn-confirm {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 100px;
+    background: #EDBF69;
+    color: white;
+    font-family: Montserrat-Alt;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.div-sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-sign p {
+    margin: 12px 0 0;
+    text-align: center;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+}
+
+.btn-sign {
+    margin-top: 10px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 100px;
+    background: #AD191F;
+    color: white;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Ошибки Django */
+
+.field-errors,
+.form-errors {
+    color: #ff7777;
+    font-family: Montserrat-Alt;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.field-errors ul,
+.form-errors ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.field-errors li,
+.form-errors li {
+    margin-bottom: 4px;
+}
+
+/* Подвал */
+
+footer {
+    background: #1E1E1E;
+}
+
+.text-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.p-footer {
+    margin: 12px 0;
+    font-family: Montserrat-Alt;
+    font-size: 14px;
+    color: #7C7C7C;
+}
+
+/* Ноутбуки */
+
+@media (max-width: 1439px) {
+    .div-reg {
+        gap: 40px;
+    }
+
+    .banner {
+        width: 340px;
+        height: 455px;
+    }
+
+    .div-reg > div:last-child {
+        width: 350px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .div-reg > div:last-child > div:first-child p {
+        font-size: 19px;
+    }
+}
+
+/* Планшеты */
+
+@media (max-width: 1023px) {
+    header {
+        padding: 22px 28px 0;
+    }
+
+    .main {
+        padding: 35px 25px;
+    }
+
+    .div-reg {
+        gap: 25px;
+    }
+
+    .banner {
+        width: 300px;
+        height: 400px;
+    }
+
+    .div-reg > div:last-child {
+        width: 330px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .regis {
+        gap: 13px;
+    }
+
+    .p-footer {
+        font-size: 13px;
+    }
+}
+
+/* Телефоны */
+
+@media (max-width: 767px) {
+    header {
+        padding: 18px 20px 0;
+    }
+
+    .close {
+        width: 23px;
+    }
+
+    .main {
+        padding: 30px 20px 40px;
+    }
+
+    .div-reg {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .banner {
+        display: none;
+    }
+
+    .div-reg > div:last-child {
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .logo {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .div-reg > div:last-child > div:first-child p {
+        margin: 8px 0 22px;
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .regis {
+        gap: 13px;
+    }
+
+    .regis input {
+        height: 43px;
+        font-size: 14px;
+    }
+
+    .btn-confirm {
+        min-height: 42px;
+        font-size: 14px;
+    }
+
+    .div-sign p {
+        font-size: 13px;
+    }
+
+    .btn-sign {
+        font-size: 13px;
+    }
+
+    .p-footer {
+        margin: 9px 0;
+        font-size: 11px;
+    }
+}
+
+/* Маленькие телефоны */
+
+@media (max-width: 380px) {
+    header {
+        padding: 15px;
+    }
+
+    .main {
+        padding: 25px 15px 35px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .div-reg > div:last-child > div:first-child p {
+        font-size: 17px;
+    }
+
+    .regis input {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .btn-confirm {
+        min-height: 40px;
+        font-size: 13px;
+    }
+}

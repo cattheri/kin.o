@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Мой профиль | kin.o</title>
+
+    <link rel="stylesheet" href="{% static 'styles/style-manage.css' %}">
+</head>
+
+<body>
+
+    <main class="manage-container profile-container">
+
+        <a href="{% url 'home' %}" class="logo">
+            kin<span>.</span>o
+        </a>
+
+        <div class="profile-header">
+
+            <div>
+                <h1>Мой профиль</h1>
+                <p class="profile-name">{{ display_name }}</p>
+                <p class="profile-email">{{ request.user.email }}</p>
+            </div>
+
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+
+                <button type="submit" class="btn-logout">
+                    Выйти
+                </button>
+            </form>
+
+
+        </div>
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <p class="message">{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="profile-section-header">
+
+            <h2>Смотреть позже</h2>
+
+            <a href="{% url 'showcase' %}" class="btn-back">
+                Перейти в каталог
+            </a>
+
+        </div>
+
+        <div class="profile-movies">
+
+            {% for item in watchlater_items %}
+
+            <div class="profile-movie-card">
+
+                <div class="profile-movie-poster">
+
+                    {% if item.movie.poster_path %}
+                    <img src="{% static item.movie.poster_path %}" alt="{{ item.movie.title }}">
+                    {% else %}
+                    <img src="{% static 'assets/profile.svg' %}" alt="Постер отсутствует">
+                    {% endif %}
+
+                </div>
+
+                <div class="profile-movie-info">
+
+                    <h3>{{ item.movie.title }}</h3>
+
+                    <p class="profile-movie-meta">
+                        {{ item.movie.year }} · {{ item.movie.genre.name }}
+                    </p>
+
+                    <p class="profile-status">
+                        Статус: {{ item.get_status_display }}
+                    </p>
+                    {% if item.rating %}
+                    <p class="profile-rating">
+                        Моя оценка: <span>★ {{ item.rating }}/10</span>
+                    </p>
+                    {% endif %}
+
+                    <div class="profile-movie-actions">
+
+                        <a href="{% url 'movie_detail' item.movie.id %}" class="btn-profile-details">
+                            Подробнее
+                        </a>
+
+                        <a href="{% url 'watchlater_edit' item.id %}" class="btn-profile-edit">
+                            Редактировать
+                        </a>
+
+                        <form method="POST" action="{% url 'watchlater_delete' item.id %}"
+                            onsubmit="return confirm('Удалить фильм из вашего списка?');">
+
+                            {% csrf_token %}
+
+                            <button type="submit" class="btn-profile-delete">
+                                Удалить
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="empty-profile">
+
+                <h3>Ваш список пока пуст</h3>
+
+                <p>
+                    Добавляйте понравившиеся фильмы из каталога,
+                    чтобы не забыть посмотреть их позже.
+                </p>
+
+                <a href="{% url 'showcase' %}" class="btn-submit">
+                    Перейти в каталог
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

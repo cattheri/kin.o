@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ movie.title }} | kin.o</title>
+
+    <link rel="stylesheet" href="{% static 'styles/style-manage.css' %}">
+</head>
+
+<body>
+
+    <main class="manage-container">
+
+        <a href="{% url 'home' %}" class="logo">
+            kin<span>.</span>o
+        </a>
+
+        <div class="detail-back">
+            <a href="{% url 'showcase' %}" class="btn-back">
+                ← Назад
+            </a>
+        </div>
+
+        <div class="detail-card">
+
+            <div class="detail-info">
+
+                <h1>{{ movie.title }}</h1>
+
+                <div class="detail-meta">
+
+                    <span>{{ movie.year }}</span>
+
+                    <span>{{ movie.genre.name }}</span>
+
+                    {% if movie.rating != None %}
+                    <span class="detail-rating">
+                        {{ movie.rating }} ★
+                    </span>
+                    {% endif %}
+
+                </div>
+
+                <h2>О фильме</h2>
+
+                <p class="detail-description">
+                    {{ movie.description }}
+                </p>
+
+                {% if movie_in_watchlater %}
+
+                <a href="{% url 'profile' %}" class="btn-submit detail-button">
+                    Уже в вашем списке
+                </a>
+
+                {% else %}
+
+                <form method="POST" action="{% url 'watchlater_add' movie.id %}">
+
+                    {% csrf_token %}
+
+                    <button class="btn-submit" type="submit">
+                        Смотреть позже
+                    </button>
+
+                </form>
+
+                {% endif %}
+
+            </div>
+
+            <div class="detail-poster-container">
+
+                {% if movie.poster_path %}
+                <img src="{% static movie.poster_path %}" alt="{{ movie.title }}" class="detail-poster">
+                {% else %}
+                <img src="{% static 'assets/profile.svg' %}" alt="Постер отсутствует" class="detail-poster">
+                {% endif %}
+
+            </div>
+
+        </div>
+        <!-- КАДРЫ ИЗ ФИЛЬМА -->
+
+        <section class="movie-frames-section">
+
+            <h2>Кадры из фильма</h2>
+
+            {% if movie_frames %}
+
+            <div class="movie-frames-grid">
+
+                {% for frame in movie_frames %}
+
+                <div class="movie-frame">
+
+                    <img src="{{ frame.image.url }}" alt="Кадр из фильма {{ movie.title }}" loading="lazy">
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <p class="no-frames">
+                Кадры из фильма пока не добавлены.
+            </p>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

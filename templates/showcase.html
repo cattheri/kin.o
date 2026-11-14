@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Витрина</title>
+    <link rel="stylesheet" href="{% static 'styles/style-showcase.css' %}">
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">kin.o</div>
+
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Главное</a>
+                <a href="{% url 'showcase' %}">Витрина</a>
+            </div>
+
+            <div class="profile">
+
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">
+                    <img src="{% static 'assets/profile.svg' %}" alt="Профиль">
+                </a>
+                {% else %}
+                <a href="{% url 'auth' %}">
+                    <img src="{% static 'assets/profile.svg' %}" alt="Войти">
+                </a>
+                {% endif %}
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="main">
+
+
+        <div class="search">
+            <input type="text" id="search-input" placeholder="ПОИСК">
+            <img src="{% static 'assets/search.svg' %}" alt="Поиск">
+        </div>
+
+        <section class="movie-section" id="section-top">
+
+            <h2>Каталог фильмов</h2>
+
+            <div class="cards">
+
+                {% for movie in movies %}
+
+                <div class="card">
+
+                    {% if movie.poster_path %}
+                    <img src="{% static movie.poster_path %}" alt="{{ movie.title }}">
+                    {% else %}
+                    <img src="{% static 'assets/profile.svg' %}" alt="Постер отсутствует">
+                    {% endif %}
+
+                    <div class="card-info">
+
+                        <a href="{% url 'movie_detail' movie.id %}" class="movie-title-link">
+                            <h3 class="card-title">{{ movie.title }}</h3>
+                        </a>
+
+                        <p class="card-rating">
+
+                            {{ movie.year }} · {{ movie.genre.name }}
+
+                            {% if movie.rating != None %}
+                            <span class="movie-rating">
+                                ★ {{ movie.rating }}
+                            </span>
+                            {% endif %}
+
+                        </p>
+
+                        <p class="p-about">{{ movie.description }}</p>
+
+                        <div class="card-buttons">
+
+                            <a href="{% url 'movie_detail' movie.id %}" class="btn-watch">
+                                Подробнее
+                            </a>
+
+                            {% if movie.id in saved_movie_ids %}
+
+                            <a href="{% url 'profile' %}" class="btn-later">
+                                В профиле
+                            </a>
+
+                            {% else %}
+
+                            <form method="POST" action="{% url 'watchlater_add' movie.id %}">
+                                {% csrf_token %}
+
+                                <button class="btn-later" type="submit">
+                                    Смотреть позже
+                                </button>
+                            </form>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% empty %}
+
+                <p>Пока фильмов нет. Добавьте фильмы через административную панель.</p>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="text-footer">
+            <div>
+                <p class="p-footer">Соглашение</p>
+                <p class="p-footer">Правила рекомендаций</p>
+                <p class="p-footer">Справка</p>
+                <p class="p-footer">© 2026, kin.o</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'scripts/search.js' %}"></script>
+
+</body>
+
+</html>
